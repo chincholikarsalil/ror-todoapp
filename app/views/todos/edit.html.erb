@@ -1,32 +1,6 @@
 <h2>Edit an existing Todo</h2>
 
-<% if @todo.errors.any? %>
-  <h3>Error/s: </h3>
-  <ul>
-    <% @todo.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
-
-<% end %>
-
-<%= form_for @todo do |f| %>
-
-  <p>
-    <%= f.label :name %> <br>
-    <%= f.text_field :name %>
-  </p>
-
-  <p>
-    <%= f.label :description %> <br>
-    <%= f.text_area :description %>
-  </p>
-  
-  <p>
-    <%= f.submit %>
-  </p>
-  
-<% end %>
+<%= render 'form' %>
 
 <%= link_to "Delete", todo_path(@todo), method: :delete, data: {confirm: "Are you sure?"} %> |
 <%= link_to "Back to todos listing", todos_path %>
