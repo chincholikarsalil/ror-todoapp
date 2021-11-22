@@ -1,4 +1,4 @@
-<h1>Create a new Todo</h1>
+<h2>Create a new Todo</h2>
 
 <% if @todo.errors.any? %>
   <h3>Error/s: </h3>
@@ -27,3 +27,5 @@
   </p>
   
 <% end %>
+
+<%= link_to "Back to todos listing", todos_path %>
